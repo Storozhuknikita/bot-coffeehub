@@ -11,7 +11,7 @@ error_reporting(E_ALL);
 $client_secret = '1547ba15d5dc931f291bbf8fdb5e8fa4';
 
 
-print_r($_SERVER['code']);
+print_r($_GET['code']);
 
 // Отправляем уведомление
 //mail('storozhuk.nikita@gmail.com', 'Webhook Waiter', $text);
