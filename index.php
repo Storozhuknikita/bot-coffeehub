@@ -17,15 +17,11 @@ $code = $_REQUEST['code'];
 // Отправляем запрос в Poster
 $auth = Poster::auth($_REQUEST['code']);
 
+// Получить всех сотрудников
+$url = 'https://testapi.joinposter.com/api/access.getEmployees?token='.$data['access_token'].'';
+$data = json_decode(Poster::sendRequest($url));
 
-$url = "https://testapi.joinposter.com/api/clients.getGroup'
-    . '?format=json'
-    . '&token='".$auth['access_token']."''
-    . '&group_id=1";
-
-$group = Poster::sendRequest($url);
-
-print_r($group);
+print_r($data);
 
 echo'<pre>';
 print_r($auth);
