@@ -16,10 +16,11 @@ echo'</pre>';
 
 
 echo'Настройки уведомления';
-echo'
+?>
+
 <script type="text/javascript">
     window.addEventListener('load', function () { top.postMessage({hideSpinner: true}, '*') }, false);
-        </script>';
+        </script>
 
 // Отправляем уведомление
 //mail('storozhuk.nikita@gmail.com', 'Webhook Waiter', $text);
