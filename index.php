@@ -19,7 +19,7 @@ $auth = Poster::auth($_REQUEST['code']);
 
 
 echo'<pre>';
-print_r($auth]);
+print_r($auth);
 echo'</pre>';
 
 

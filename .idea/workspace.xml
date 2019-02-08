@@ -17,9 +17,9 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+              <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
               <folding>
-                <marker date="1549621094265" expanded="true" signature="496:525" ph="..." />
+                <marker date="1549621136359" expanded="true" signature="495:524" ph="..." />
               </folding>
             </state>
           </provider>
@@ -115,12 +115,12 @@
       <option name="presentableId" value="Default" />
       <updated>1549564853644</updated>
       <workItem from="1549564855102" duration="1132000" />
-      <workItem from="1549620376984" duration="716000" />
+      <workItem from="1549620376984" duration="754000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1848000" />
+    <option name="totallyTimeSpent" value="1886000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -193,9 +193,9 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
           <folding>
-            <marker date="1549621094265" expanded="true" signature="496:525" ph="..." />
+            <marker date="1549621136359" expanded="true" signature="495:524" ph="..." />
           </folding>
         </state>
       </provider>
