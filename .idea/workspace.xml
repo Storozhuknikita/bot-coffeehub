@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3badfbc7-1d98-4c69-ab1d-931acf8fe654" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,9 +27,9 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+              <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
               <folding>
-                <marker date="1549622138929" expanded="true" signature="678:707" ph="..." />
+                <marker date="1549622204758" expanded="true" signature="696:725" ph="..." />
               </folding>
             </state>
           </provider>
@@ -141,12 +140,12 @@
       <option name="presentableId" value="Default" />
       <updated>1549564853644</updated>
       <workItem from="1549564855102" duration="1132000" />
-      <workItem from="1549620376984" duration="1574000" />
+      <workItem from="1549620376984" duration="1639000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2706000" />
+    <option name="totallyTimeSpent" value="2771000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -219,9 +218,9 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
           <folding>
-            <marker date="1549622138929" expanded="true" signature="678:707" ph="..." />
+            <marker date="1549622204758" expanded="true" signature="696:725" ph="..." />
           </folding>
         </state>
       </provider>
