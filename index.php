@@ -24,7 +24,11 @@ $access_token = $auth->access_token;
 $url = 'https://'.$account_name.'.joinposter.com/api/access.getEmployees?token='.$access_token.'';
 $data = json_decode(Poster::sendRequest($url));
 
+echo'<pre>';
 print_r($data);
+echo'</pre>';
+
+echo'<hr>';
 
 echo'<pre>';
 print_r($auth);
