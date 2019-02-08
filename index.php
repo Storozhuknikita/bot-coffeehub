@@ -18,6 +18,15 @@ $code = $_REQUEST['code'];
 $auth = Poster::auth($_REQUEST['code']);
 
 
+$url = 'https://testapi.joinposter.com/api/clients.getGroup'
+    . '?format=json'
+    . '&token='.$auth['access_token'].''
+    . '&group_id=1';
+
+$group = Poster::sendRequest($url);
+
+print_r($group);
+
 echo'<pre>';
 print_r($auth);
 echo'</pre>';
