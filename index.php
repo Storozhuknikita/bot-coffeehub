@@ -17,8 +17,11 @@ $code = $_REQUEST['code'];
 // Отправляем запрос в Poster
 $auth = Poster::auth($_REQUEST['code']);
 
+$account_name = $auth['account_name'];
+$access_token = $auth['access_token'];
+
 // Получить всех сотрудников
-$url = 'https://'.$auth['account_name'].'.joinposter.com/api/access.getEmployees?token='.$auth['access_token'].'';
+$url = 'https://'.$account_name.'.joinposter.com/api/access.getEmployees?token='.$access_token.'';
 $data = json_decode(Poster::sendRequest($url));
 
 print_r($data);

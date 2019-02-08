@@ -16,8 +16,8 @@
       <file leaf-file-name="hook.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hook.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="129" selection-end-column="51" />
+            <state relative-caret-position="205">
+              <caret line="129" column="37" lean-forward="true" selection-start-line="129" selection-start-column="37" selection-end-line="129" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -26,10 +26,10 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+            <state relative-caret-position="345">
+              <caret line="23" column="94" lean-forward="false" selection-start-line="23" selection-start-column="94" selection-end-line="23" selection-end-column="94" />
               <folding>
-                <marker date="1549622204758" expanded="true" signature="696:725" ph="..." />
+                <marker date="1549622273782" expanded="true" signature="759:788" ph="..." />
               </folding>
             </state>
           </provider>
@@ -140,12 +140,12 @@
       <option name="presentableId" value="Default" />
       <updated>1549564853644</updated>
       <workItem from="1549564855102" duration="1132000" />
-      <workItem from="1549620376984" duration="1639000" />
+      <workItem from="1549620376984" duration="1711000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2771000" />
+    <option name="totallyTimeSpent" value="2843000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -209,18 +209,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hook.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="129" selection-end-column="51" />
+        <state relative-caret-position="205">
+          <caret line="129" column="37" lean-forward="true" selection-start-line="129" selection-start-column="37" selection-end-line="129" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        <state relative-caret-position="345">
+          <caret line="23" column="94" lean-forward="false" selection-start-line="23" selection-start-column="94" selection-end-line="23" selection-end-column="94" />
           <folding>
-            <marker date="1549622204758" expanded="true" signature="696:725" ph="..." />
+            <marker date="1549622273782" expanded="true" signature="759:788" ph="..." />
           </folding>
         </state>
       </provider>
