@@ -41,10 +41,13 @@ $pdf->SetFont('Arial', '', 12);
 
 $pdf->Cell(100, 16, "Hello, World!");
 
-echo $pdf->Output('S');
 
-/*
-$doc = $pdf->Output('S');
+$pdf->Output('reciept.pdf', 'F');
+
+//echo $pdf->Output('S');
+
+
+$doc = $pdf->Output('reciept.pdf', 'S');
 
 $name        = "Название здесь идет";
 $email       = "storozhuk.nikita@gmail.com";
