@@ -50,7 +50,8 @@ $data = json_decode(Poster::sendRequest($url));
 //echo'</pre>';
 
 $pdf = new FPDF('P', 'pt', 'Letter');
-
+$pdf->AddPage();
+$pdf->SetFont('Arial', '', 12);
 
 // Строки записываем
 $pdf->Cell(100, 16, "Hello, World!");
