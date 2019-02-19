@@ -54,10 +54,10 @@ $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
 $pdf->SetFont('Arial', '', 12);
 
-$text = iconv('windows-1251', 'utf-8', 'Выручка: '.$data->response->revenue.'');
+$txt = iconv('utf-8', 'cp1252', 'Выручка: '.$data->response->revenue.'');
 
 // Строки записываем
-$pdf->Cell(100, 16, $text);
+$pdf->Cell(100, 16, $txt);
 
 
 $pdf->Output('reciept.pdf', 'F');
