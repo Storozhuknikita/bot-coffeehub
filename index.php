@@ -45,9 +45,9 @@ $access_token = $auth->access_token;
 $url = 'https://'.$account_name.'.joinposter.com/api/access.getEmployees?token='.$access_token.'';
 $data = json_decode(Poster::sendRequest($url));
 
-echo'<pre>';
-print_r($auth);
-echo'</pre>';
+//echo'<pre>';
+//print_r($auth);
+//echo'</pre>';
 
 $pdf = new FPDF('P', 'pt', 'Letter');
 
