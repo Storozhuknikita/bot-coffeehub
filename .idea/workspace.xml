@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3badfbc7-1d98-4c69-ab1d-931acf8fe654" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,18 +27,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="59" column="45" lean-forward="false" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PHPMailer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PHPMailer-master/src/PHPMailer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="30" column="15" lean-forward="false" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="15" />
+            <state relative-caret-position="404">
+              <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -166,12 +157,12 @@
       <workItem from="1549564855102" duration="1132000" />
       <workItem from="1549620376984" duration="1956000" />
       <workItem from="1549630260570" duration="3000" />
-      <workItem from="1550585273165" duration="2641000" />
+      <workItem from="1550585273165" duration="3155000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5732000" />
+    <option name="totallyTimeSpent" value="6246000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -323,7 +314,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PHPMailer-master/src/PHPMailer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="-11292">
           <caret line="30" column="15" lean-forward="false" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="15" />
           <folding />
         </state>
@@ -331,8 +322,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="59" column="45" lean-forward="false" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+        <state relative-caret-position="404">
+          <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
           <folding />
         </state>
       </provider>
