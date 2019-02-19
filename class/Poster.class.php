@@ -55,9 +55,6 @@ class Poster
         $url = 'https://joinposter.com/api/auth/manage';
 
         $group = Poster::sendRequest($url, 'post', $data);
-        //echo'group: ';
-        //debug($group);
-        //log($group);
 
         $d = json_decode($group);
         return $d;
