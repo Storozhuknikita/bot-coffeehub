@@ -4,13 +4,17 @@
 </script>
 
 <?php
+
+// https://php-academy.kiev.ua/blog/generating-pdfs-with-php
+
+
 error_reporting(E_ALL);
 
 define('POSTER_CLIENT_ID', '223');
 define('POSTER_CLIENT_SECRET', '1547ba15d5dc931f291bbf8fdb5e8fa4');
 
 
-header("Content-type:application/pdf");
+//header("Content-type:application/pdf");
 
 
 include_once 'class/Poster.class.php';
