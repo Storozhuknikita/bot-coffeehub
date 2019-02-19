@@ -55,7 +55,7 @@ $pdf->AddPage();
 $pdf->SetFont('Arial', '', 12);
 
 // Строки записываем
-$pdf->Cell(100, 16, "Hello, World!");
+$pdf->Cell(100, 16, 'Выручка: '.$data->response->revenue.'');
 
 
 $pdf->Output('reciept.pdf', 'F');
