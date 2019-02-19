@@ -50,8 +50,8 @@ $data = json_decode(Poster::sendRequest($url));
 //echo'</pre>';
 
 class PDF_reciept extends FPDF {
+
     function __construct ($orientation = 'P', $unit = 'pt', $format = 'Letter', $margin = 40) {
-        $this->FPDF($orientation, $unit, $format);
         $this->SetTopMargin($margin);
         $this->SetLeftMargin($margin);
         $this->SetRightMargin($margin);
