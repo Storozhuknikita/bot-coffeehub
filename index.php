@@ -135,6 +135,9 @@ $pdf->SetTextColor(1, 162, 232);
 $pdf->Write(13, "store@nettuts.com", "mailto:example@example.com");
 
 //$pdf->Output('reciept.pdf', 'F');
+$pdf->Output('reciept.pdf', 'F');
+
+// Генерация PDF и сохранение в файл
 $doc = $pdf->Output('reciept.pdf', 'S');
 
 
