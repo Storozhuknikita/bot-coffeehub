@@ -54,7 +54,8 @@ $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
 $pdf->SetFont('Arial', '', 12);
 
-$txt = iconv('utf-8', 'cp1252', 'Выручка: '.$data->response->revenue.'');
+
+$txt = iconv('UTF-8', 'windows-1252', html_entity_decode('Выручка: '.$data->response->revenue.''));
 
 // Строки записываем
 $pdf->Cell(100, 16, $txt);
