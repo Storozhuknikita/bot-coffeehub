@@ -134,7 +134,9 @@ $pdf->SetFont('Arial', 'U', 12);
 $pdf->SetTextColor(1, 162, 232);
 $pdf->Write(13, "store@nettuts.com", "mailto:example@example.com");
 
-$pdf->Output('reciept.pdf', 'F');
+//$pdf->Output('reciept.pdf', 'F');
+$doc = $pdf->Output('reciept.pdf', 'S');
+
 
 // Строки записываем
 //$pdf->Cell(100, 16, "Hello, World!");
