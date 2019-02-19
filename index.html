@@ -12,18 +12,6 @@
     </form>
 </div></div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
-<script type="text/javascript">
-    $('button').click(function () {
-        $.post('index.php', $('form').serialize(), function () {
-            $('div#wrap div').fadeOut( function () {
-                $(this).empty().html("<h2>Thank you!</h2><p>Thank you for your order. Please <a href='reciept.pdf'>download your reciept</a>. </p>").fadeIn();
-            });
-        });
-        return false;
-    });
-</script>
-
 <fieldset>
     <legend>Personal Information</legend>
     <div class="col">
@@ -88,3 +76,16 @@
 
 
 <button type="submit">Submit Order</button>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $('button').click(function () {
+        $.post('index.php', $('form').serialize(), function () {
+            $('div#wrap div').fadeOut( function () {
+                $(this).empty().html("<h2>Thank you!</h2><p>Thank you for your order. Please <a href='reciept.pdf'>download your reciept</a>. </p>").fadeIn();
+            });
+        });
+        return false;
+    });
+</script>
