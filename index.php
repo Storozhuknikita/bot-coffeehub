@@ -104,7 +104,6 @@ echo'</pre>';
 //mail('storozhuk.nikita@gmail.com', 'Webhook Waiter', $text);
 */
 
-*/
 ?>
 
 
