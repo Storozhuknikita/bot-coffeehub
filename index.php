@@ -95,7 +95,7 @@ if(mail($to, $subject, $message, $headers))
     echo "При отправке почты произошла ошибка.";
 }
 
-*/
+
 //$mail->AddStringAttachment($doc, 'doc.pdf', 'base64', 'application/pdf');
 //$mail->Send();
 
