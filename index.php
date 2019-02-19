@@ -57,7 +57,7 @@ require 'PHPMailer-master/src/Exception.php';
 require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
 
-$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+$mail = new PHPMailer\PHPMailer\PHPMailer();
 try {
     //Server settings
     /*$mail->SMTPDebug = 2;                                 // Enable verbose debug output
