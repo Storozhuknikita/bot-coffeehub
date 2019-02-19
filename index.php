@@ -52,7 +52,7 @@ echo'</pre>';
 
 $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
-$pdf->SetFont('Arial', '', 12);
+$pdf->SetFont('LucidaSansUnicode', '', 32);
 
 $value = mb_convert_encoding('Выручка: '.$data->response->revenue.'', 'ISO-8859-1', 'UTF-8');
 
