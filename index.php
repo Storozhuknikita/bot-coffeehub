@@ -77,6 +77,8 @@ try {
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;   */                                 // TCP port to connect to
 
+    $mail->CharSet = 'UTF-8';
+
     //Recipients
     $mail->setFrom('storozhuk.nikita@gmail.com', 'Отчеты о бизнесе');
     $mail->addAddress($auth->ownerInfo->email, $auth->ownerInfo->name);     // Add a recipient
