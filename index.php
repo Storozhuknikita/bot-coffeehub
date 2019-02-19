@@ -58,6 +58,20 @@ class PDF_reciept extends FPDF {
         $this->SetAutoPageBreak(true, $margin);
     }
 
+    function Header() {
+        $this->SetFont('Arial', 'B', 20);
+        $this->SetFillColor(36, 96, 84);
+        $this->SetTextColor(225);
+        $this->Cell(0, 30, "Nettuts+ Online Store", 0, 1, 'C', true);
+    }
+
+    function Footer() {
+        $this->SetFont('Arial', '', 12);
+        $this->SetTextColor(0);
+        $this->SetXY(0,-60);
+        $this->Cell(0, 20, "Thank you for shopping at Nettuts+!", 'T', 0, 'C');
+    }
+
     function PriceTable($products, $prices) {
         $this->SetFont('Arial', 'B', 12);
         $this->SetTextColor(0);
@@ -82,19 +96,7 @@ class PDF_reciept extends FPDF {
 
 }
 
-function Header() {
-    $this->SetFont('Arial', 'B', 20);
-    $this->SetFillColor(36, 96, 84);
-    $this->SetTextColor(225);
-    $this->Cell(0, 30, "Nettuts+ Online Store", 0, 1, 'C', true);
-}
 
-function Footer() {
-    $this->SetFont('Arial', '', 12);
-    $this->SetTextColor(0);
-    $this->SetXY(0,-60);
-    $this->Cell(0, 20, "Thank you for shopping at Nettuts+!", 'T', 0, 'C');
-}
 
 
 
