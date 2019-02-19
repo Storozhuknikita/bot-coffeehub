@@ -54,9 +54,6 @@ $pdf = new FPDF('P', 'pt', 'Letter');
 
 // Строки записываем
 $pdf->Cell(100, 16, "Hello, World!");
-$pdf->Cell(100, 16, "Hello, World!");
-$pdf->Cell(100, 16, "Hello, World!");
-$pdf->Cell(100, 16, "Hello, World!");
 
 
 $pdf->Output('reciept.pdf', 'F');
