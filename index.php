@@ -42,12 +42,13 @@ $account_name = $auth->account_name;
 $access_token = $auth->access_token;
 
 // Получить всех сотрудников
-$url = 'https://'.$account_name.'.joinposter.com/api/access.getEmployees?token='.$access_token.'';
+$url = 'https://'.$account_name.'.joinposter.com/api/dash.getSpotsSales?token='.$access_token.'';
 $data = json_decode(Poster::sendRequest($url));
 
-//echo'<pre>';
-//print_r($auth);
-//echo'</pre>';
+
+echo'<pre>';
+print_r($data);
+echo'</pre>';
 
 $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
