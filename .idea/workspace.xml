@@ -26,8 +26,18 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="61" column="23" lean-forward="false" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+            <state relative-caret-position="174">
+              <caret line="59" column="45" lean-forward="false" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PHPMailer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PHPMailer-master/src/PHPMailer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="30" column="15" lean-forward="false" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -99,6 +109,17 @@
               <item name="bot-coffee-hub" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="fpdf181" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="bot-coffee-hub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bot-coffee-hub" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PHPMailer-master" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="bot-coffee-hub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bot-coffee-hub" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PHPMailer-master" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -145,12 +166,12 @@
       <workItem from="1549564855102" duration="1132000" />
       <workItem from="1549620376984" duration="1956000" />
       <workItem from="1549630260570" duration="3000" />
-      <workItem from="1550585273165" duration="2224000" />
+      <workItem from="1550585273165" duration="2641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5315000" />
+    <option name="totallyTimeSpent" value="5732000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -292,10 +313,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PHPMailer-master/get_oauth_token.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="75" column="27" lean-forward="false" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHPMailer-master/src/PHPMailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="30" column="15" lean-forward="false" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="61" column="23" lean-forward="false" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+        <state relative-caret-position="174">
+          <caret line="59" column="45" lean-forward="false" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
           <folding />
         </state>
       </provider>
