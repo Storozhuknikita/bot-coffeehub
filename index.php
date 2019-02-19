@@ -1,3 +1,8 @@
+
+<script type="text/javascript">
+    window.addEventListener('load', function () { top.postMessage({hideSpinner: true}, '*') }, false);
+</script>
+
 <?php
 error_reporting(E_ALL);
 
@@ -27,6 +32,13 @@ $data = json_decode(Poster::sendRequest($url));
 require('fpdf181/fpdf.php');
 $pdf = new FPDF('P', 'pt', 'Letter');
 
+$pdf->AddPage();
+$pdf->SetFont('Arial', '', 12);
+
+$pdf->Cell(100, 16, "Hello, World!");
+
+$pdf->Output();
+
 /*
 echo'<pre>';
 print_r($data);
@@ -45,7 +57,4 @@ echo'</pre>';
 */
 ?>
 
-<script type="text/javascript">
-    window.addEventListener('load', function () { top.postMessage({hideSpinner: true}, '*') }, false);
-</script>
 
