@@ -7,22 +7,30 @@
 
 // https://php-academy.kiev.ua/blog/generating-pdfs-with-php
 
-
 error_reporting(E_ALL);
 
-define('POSTER_CLIENT_ID', '223');
-define('POSTER_CLIENT_SECRET', '1547ba15d5dc931f291bbf8fdb5e8fa4');
-
-
-//header("Content-type:application/pdf");
-
-
-include_once 'class/Poster.class.php';
 /*
+ * Задача файла
  * Сбор информации о выручке
  * Генерация PDF
  * Отправка на почту
  */
+
+define('POSTER_CLIENT_ID', '223');
+define('POSTER_CLIENT_SECRET', '1547ba15d5dc931f291bbf8fdb5e8fa4');
+
+//header("Content-type:application/pdf");
+
+// Poster Class
+include_once 'class/Poster.class.php';
+
+// PDF Class
+require('fpdf181/fpdf.php');
+
+// MAIL Class
+require 'PHPMailer-master/src/Exception.php';
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer-master/src/SMTP.php';
 
 // Получаем данные от Poster
 $code = $_REQUEST['code'];
@@ -37,7 +45,6 @@ $access_token = $auth->access_token;
 $url = 'https://'.$account_name.'.joinposter.com/api/access.getEmployees?token='.$access_token.'';
 $data = json_decode(Poster::sendRequest($url));
 
-require('fpdf181/fpdf.php');
 $pdf = new FPDF('P', 'pt', 'Letter');
 
 $pdf->AddPage();
@@ -50,13 +57,10 @@ $pdf->Output('reciept.pdf', 'F');
 
 //echo $pdf->Output('S');
 
-
+// Генерация PDF и сохранение в файл
 $doc = $pdf->Output('reciept.pdf', 'S');
 
-require 'PHPMailer-master/src/Exception.php';
-require 'PHPMailer-master/src/PHPMailer.php';
-require 'PHPMailer-master/src/SMTP.php';
-
+// Подготовка письма
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 try {
     //Server settings
@@ -93,25 +97,4 @@ try {
     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }
 
-
-//$mail->AddStringAttachment($doc, 'doc.pdf', 'base64', 'application/pdf');
-//$mail->Send();
-
-/*
-echo'<pre>';
-print_r($data);
-echo'</pre>';
-
-echo'<hr>';
-
-echo'<pre>';
-print_r($auth);
-echo'</pre>';
-
-// Отправляем уведомление
-//mail('storozhuk.nikita@gmail.com', 'Webhook Waiter', $text);
-*/
-
 ?>
-
-
