@@ -78,10 +78,10 @@ try {
     $mail->Port = 587;   */                                 // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('storozhuk.nikita@gmail.com', 'Mailer');
-    $mail->addAddress('storozhuk.nikita@gmail.com', 'Joe User');     // Add a recipient
+    $mail->setFrom('storozhuk.nikita@gmail.com', 'Отчеты о бизнесе');
+    $mail->addAddress($auth->ownerInfo->email, $auth->ownerInfo->name);     // Add a recipient
     //$mail->addAddress('ellen@example.com');               // Name is optional
-    $mail->addReplyTo('storozhuk.nikita@gmail.com', 'Information');
+    //$mail->addReplyTo('storozhuk.nikita@gmail.com', 'Information');
     //$mail->addCC('cc@example.com');
     //$mail->addBCC('bcc@example.com');
 
@@ -91,14 +91,14 @@ try {
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    $mail->Subject = 'Отчет по бизнесу '.$auth->ownerInfo->company_name;
+    $mail->Body    = 'У вас все заебок <b>in bold!</b>';
+    $mail->AltBody = 'У вас все заебок без HTML';
 
     $mail->send();
-    echo 'Message has been sent';
+    echo 'Сообщение было отправлено';
 } catch (Exception $e) {
-    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+    echo 'Сообщение не было отправлено. Mailer Error: ', $mail->ErrorInfo;
 }
 
 ?>
