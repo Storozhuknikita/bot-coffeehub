@@ -26,6 +26,7 @@ $data = json_decode(Poster::sendRequest($url));
 
 require('fpdf181/fpdf.php');
 $pdf = new FPDF('P', 'pt', 'Letter');
+
 /*
 echo'<pre>';
 print_r($data);
@@ -37,14 +38,14 @@ echo'<pre>';
 print_r($auth);
 echo'</pre>';
 
+// Отправляем уведомление
+//mail('storozhuk.nikita@gmail.com', 'Webhook Waiter', $text);
+*/
 
-echo'Настройки уведомления';
+*/
 ?>
 
 <script type="text/javascript">
     window.addEventListener('load', function () { top.postMessage({hideSpinner: true}, '*') }, false);
 </script>
 
-// Отправляем уведомление
-//mail('storozhuk.nikita@gmail.com', 'Webhook Waiter', $text);
-*/
