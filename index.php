@@ -19,7 +19,7 @@ use poster\src\PosterApi;
  * Генерация PDF
  * Отправка на почту
  */
-/*
+
 PosterApi::init([
     'application_id' => POSTER_CLIENT_ID, // Your application id (client_id)
     'application_secret' => POSTER_CLIENT_SECRET, // secret
@@ -28,7 +28,7 @@ PosterApi::init([
 
 
 $oAuthUrl = PosterApi::auth()->getOauthUrl();
-*/
+
 $result = (object)PosterApi::auth()->getOauthToken($_GET['account'], $_GET['code']);
 
 if (empty($result->access_token)) {
