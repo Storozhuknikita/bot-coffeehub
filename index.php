@@ -16,8 +16,8 @@ error_reporting(E_ALL);
  * Отправка на почту
  */
 
-define('POSTER_CLIENT_ID', '223');
-define('POSTER_CLIENT_SECRET', '1547ba15d5dc931f291bbf8fdb5e8fa4');
+define('POSTER_CLIENT_ID', '162');
+define('POSTER_CLIENT_SECRET', 'b1d1d560b773df86da147d36ae2b2294');
 
 //header("Content-type:application/pdf");
 
