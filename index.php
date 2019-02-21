@@ -1,4 +1,6 @@
 
+<style type="text/css" href="style.css"></style>
+
 <script type="text/javascript">
     window.addEventListener('load', function () { top.postMessage({hideSpinner: true}, '*') }, false);
 </script>
