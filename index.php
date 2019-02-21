@@ -9,6 +9,8 @@
 
 error_reporting(E_ALL);
 
+date_default_timezone_set('Europe/Moscow');
+
 /*
  * Задача файла
  * Сбор информации о выручке
@@ -41,9 +43,38 @@ $auth = Poster::auth($_REQUEST['code']);
 $account_name = $auth->account_name;
 $access_token = $auth->access_token;
 
-// Получить всех сотрудников
+// Получить статистику
 $url = 'https://'.$account_name.'.joinposter.com/api/dash.getSpotsSales?token='.$access_token.'';
 $data = json_decode(Poster::sendRequest($url));
+
+
+// Получение клиентов
+$host = 'https://'.$account_name.'.joinposter.com/api/clients.getClientsInfo?token=' . $access_token;
+$files = file_get_contents($host);
+$files = json_decode($files, true);
+
+$i = 0;
+
+// данные для фильтров
+//$year = $_POST['year'];
+$year = date('Y');
+$month_min = date('n')-1;
+$month_max = date('n')-1;
+$day_min = 1;
+$day_max = 31;
+
+foreach ($files['response'] as $file) {
+    $date_active = date_parse($file['date_activale']);
+    if (
+        ($date_active['year'] == $year AND
+            $date_active['month'] >= $month_min AND $date_active['month'] <= $month_max) AND
+        ($date_active['day'] >= $day_min AND $date_active['day'] <= $day_max)
+    ) {
+        $i++;
+    }
+}
+$clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . '-' . $month_max . ') - ' . $i . '';
+
 
 
 echo'<pre>';
@@ -54,16 +85,16 @@ $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
 $pdf->SetFont('Arial', '', 12);
 
-$value = 'Выручка: '.$data->response->revenue.'';
-
+$value = 'Revenue: '.$data->response->revenue.'';
+$average = 'Middle Invoice: '.$data->response->middle_invoice.'';
 
 // Строки записываем
 $pdf->Cell(100, 16, $value);
+$pdf->Cell(100, 32, $average);
+$pdf->Cell(100, 48, $clients);
 
 
 $pdf->Output('reciept.pdf', 'F');
-
-//echo $pdf->Output('S');
 
 // Генерация PDF и сохранение в файл
 $doc = $pdf->Output('reciept.pdf', 'S');
