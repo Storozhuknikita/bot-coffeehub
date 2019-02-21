@@ -27,7 +27,7 @@ PosterApi::init([
 ]);
 
 
-$oAuthUrl = PosterApi::auth()->getOauthToken('coffeehubofficial', $_GET['code']);
+$oAuthUrl = PosterApi::auth()->getOauthUrl();
 print_r($oAuthUrl);
 
 /*
