@@ -28,8 +28,7 @@ PosterApi::init([
 
 $oAuthUrl = PosterApi::auth()->getOauthUrl();
 
-// Redirect user to this url to start authorization
-http_redirect($oAuthUrl);
+print_r($oAuthUrl);
 
 /*
 // Poster Class
