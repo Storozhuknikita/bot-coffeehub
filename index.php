@@ -6,6 +6,9 @@
 </script>
 
 <?php
+
+require __DIR__.'/vendor/autoload.php';
+
 include_once 'config.php';
 
 use poster\src\PosterApi;
