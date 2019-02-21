@@ -25,6 +25,8 @@ PosterApi::init([
     'application_secret' => POSTER_CLIENT_SECRET, // secret
 ]);
 
+$f = PosterApi::getOauthToken('coffeehubofficial', $_REQUEST['code']);
+var_dump($f);
 
 $result = (object)PosterApi::auth()->getOauthToken(PosterApi::getAccountName(), $_GET['code']);
 
