@@ -20,25 +20,34 @@ use poster\src\PosterApi;
  * Отправка на почту
  */
 
-PosterApi::init([
-    'application_id' => POSTER_CLIENT_ID, // Your application id (client_id)
-    'application_secret' => POSTER_CLIENT_SECRET, // secret
-    'redirect_uri' => 'https://bot.coffee-hub.ru/index.php',
+// Poster Class
+include_once 'class/Poster.class.php';
+
+// Получаем данные от Poster
+$code = $_REQUEST['code'];
+
+// Отправляем запрос в Poster
+$auth = Poster::auth($_REQUEST['code']);
+
+// Настройка аккаунта и токена для запросов
+PosterApi::init ([
+    'account_name' => $auth->account_name,
+    'access_token' => $auth->access_token,
 ]);
 
+// Чтение настроек
+$result = (object)PosterApi::settings()->getAllSettings();
+var_dump($result);
 
+ // Настройка дополнений для аккаунта
+$result =(object)PosterApi::application()->setEntityExtras([
+    'entity_type ' => 'settings',
+    'extras' => [
+        'synced' => true
+    ]
+]);
+var_dump ($result);
 
-$result = (object)PosterApi::auth()->getOauthToken('coffeehubofficial', $_GET['code']);
-
-if (empty($result->access_token)) {
-    echo "Poster auth error";
-    var_dump($result);
-    die;
-}
-
-// In case of successful auth, token and account name would be placed into config automatically
-$settings = PosterApi::settings()->getAllSettings();
-var_dump($settings);
 
 /*
 // Poster Class
