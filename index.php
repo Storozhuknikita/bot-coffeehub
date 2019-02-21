@@ -137,9 +137,10 @@ try {
     // Отправка письма
     $mail->send();
 
-    echo 'Сообщение было отправлено';
+    echo 'Сообщение было отправлено - <a href="https://bot.coffee-hub.ru/reciept.pdf">Download</a> ';
 } catch (Exception $e) {
     echo 'Сообщение не было отправлено. Mailer Error: ', $mail->ErrorInfo;
 }
+
 
 ?>
