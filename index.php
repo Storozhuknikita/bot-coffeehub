@@ -23,12 +23,12 @@ use poster\src\PosterApi;
 PosterApi::init([
     'application_id' => POSTER_CLIENT_ID, // Your application id (client_id)
     'application_secret' => POSTER_CLIENT_SECRET, // secret
+    'redirect_uri' => 'https://bot.coffee-hub.ru/index.php',
 ]);
 
-$f = PosterApi::getOauthToken('coffeehubofficial', $_REQUEST['code']);
-var_dump($f);
 
-$result = (object)PosterApi::auth()->getOauthToken(PosterApi::getAccountName(), $_GET['code']);
+
+$result = (object)PosterApi::auth()->getOauthToken('coffeehubofficial', $_GET['code']);
 
 if (empty($result->access_token)) {
     echo "Poster auth error";
