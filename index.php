@@ -28,7 +28,19 @@ PosterApi::init([
 
 $oAuthUrl = PosterApi::auth()->getOauthUrl();
 
-print_r($oAuthUrl);
+$result = (object)PosterApi::auth()->getOauthToken($_GET['account'], $_GET['code']);
+
+if (empty($result->access_token)) {
+    echo "Poster auth error";
+    var_dump($result);
+    die;
+}
+
+// In case of successful auth, token and account name would be placed into config automatically
+$settings = PosterApi::settings()->getAllSettings();
+var_dump($settings);
+
+print_r($oAuthUrl->getAccountName());
 
 /*
 // Poster Class
