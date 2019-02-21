@@ -23,7 +23,7 @@ use poster\src\PosterApi;
 PosterApi::init([
     'application_id' => POSTER_CLIENT_ID, // Your application id (client_id)
     'application_secret' => POSTER_CLIENT_SECRET, // secret
-    'redirect_uri' => '/',
+    'redirect_uri' => 'https://bot.coffee-hub.ru/index.php',
 ]);
 
 
