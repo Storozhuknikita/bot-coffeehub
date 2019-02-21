@@ -53,7 +53,7 @@ echo'</pre>';
 $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
 
-$value = mb_convert_encoding('Выручка: '.$data->response->revenue.'', 'ISO-8859-1', 'UTF-8');
+$value = 'Выручка: '.$data->response->revenue.'';
 
 
 // Строки записываем
