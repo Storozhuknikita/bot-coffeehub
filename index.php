@@ -26,10 +26,9 @@ PosterApi::init([
     'redirect_uri' => 'https://vk.com',
 ]);
 
-print_r(PosterApi::getAccountName());
 
-//$oAuthUrl = PosterApi::auth()->getOauthToken(PosterApi::getAccountName(), PosterApi::getAccessToken());
-//print_r($oAuthUrl);
+$oAuthUrl = PosterApi::auth()->getOauthToken(PosterApi::getAccountName(), PosterApi::getAccessToken());
+print_r($oAuthUrl);
 
 /*
 // Poster Class
