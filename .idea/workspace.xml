@@ -19,8 +19,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="25" column="58" lean-forward="false" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+            <state relative-caret-position="211">
+              <caret line="28" column="93" lean-forward="false" selection-start-line="28" selection-start-column="93" selection-end-line="28" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -39,7 +39,7 @@
       <file leaf-file-name="Auth.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/poster/api/src/Auth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="541">
               <caret line="43" column="33" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="33" />
               <folding />
             </state>
@@ -49,8 +49,8 @@
       <file leaf-file-name="PosterApiCore.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/poster/api/src/PosterApiCore.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="244" column="34" lean-forward="false" selection-start-line="244" selection-start-column="20" selection-end-line="244" selection-end-column="34" />
+            <state relative-caret-position="201">
+              <caret line="53" column="62" lean-forward="false" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -67,6 +67,11 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>secret</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -204,12 +209,12 @@
       <workItem from="1549620376984" duration="1956000" />
       <workItem from="1549630260570" duration="3000" />
       <workItem from="1550585273165" duration="7232000" />
-      <workItem from="1550754972725" duration="3974000" />
+      <workItem from="1550754972725" duration="4317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14297000" />
+    <option name="totallyTimeSpent" value="14640000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -415,14 +420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/poster/api/src/Descriptions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1746">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/poster/api/src/PosterApi.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2511">
@@ -431,18 +428,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/poster/api/src/Auth.php">
+    <entry file="file://$PROJECT_DIR$/vendor/poster/api/src/Descriptions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="43" column="33" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="33" />
+        <state relative-caret-position="-45602">
+          <caret line="19" column="47" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/poster/api/src/PosterApiCore.php">
+    <entry file="file://$PROJECT_DIR$/vendor/poster/api/src/Auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="244" column="34" lean-forward="false" selection-start-line="244" selection-start-column="20" selection-end-line="244" selection-end-column="34" />
+        <state relative-caret-position="541">
+          <caret line="43" column="33" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -455,10 +452,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/poster/api/src/PosterApiCore.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="53" column="62" lean-forward="false" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="25" column="58" lean-forward="false" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+        <state relative-caret-position="211">
+          <caret line="28" column="93" lean-forward="false" selection-start-line="28" selection-start-column="93" selection-end-line="28" selection-end-column="93" />
           <folding />
         </state>
       </provider>
