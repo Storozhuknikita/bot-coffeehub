@@ -26,21 +26,10 @@ PosterApi::init([
     'redirect_uri' => 'https://vk.com',
 ]);
 
-$oAuthUrl = PosterApi::auth()->getOauthUrl();
+print_r(PosterApi::getAccountName());
 
-$result = (object)PosterApi::auth()->getOauthToken($_GET['account'], $_GET['code']);
-
-if (empty($result->access_token)) {
-    echo "Poster auth error";
-    var_dump($result);
-    die;
-}
-
-// In case of successful auth, token and account name would be placed into config automatically
-$settings = PosterApi::settings()->getAllSettings();
-var_dump($settings);
-
-print_r($oAuthUrl->getAccountName());
+//$oAuthUrl = PosterApi::auth()->getOauthToken(PosterApi::getAccountName(), PosterApi::getAccessToken());
+//print_r($oAuthUrl);
 
 /*
 // Poster Class
