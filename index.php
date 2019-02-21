@@ -90,11 +90,12 @@ $pdf->SetFont('Arial', '', 12);
 $value = 'Revenue: '.$data->response->revenue.'';
 $average = 'Middle Invoice: '.$data->response->middle_invoice.'';
 
-// Строки записываем
-$pdf->Cell(100, 16, $value);
-$pdf->Cell(100, 32, $average);
-$pdf->Cell(100, 48, $clients);
-
+$pdf->SetX(140);
+$pdf->SetFont('Arial', 'I');
+$pdf->Cell(200, 15, $value, 0, 2);
+$pdf->Cell(200, 15, $average, 0, 2);
+$pdf->Cell(200, 15, $clients);
+$pdf->Ln(100);
 
 $pdf->Output('reciept.pdf', 'F');
 
