@@ -6,12 +6,8 @@
 </script>
 
 <?php
-
-// https://php-academy.kiev.ua/blog/generating-pdfs-with-php
-
-error_reporting(E_ALL);
-
-date_default_timezone_set('Europe/Moscow');
+include_once 'config.php';
+use poster\src\PosterApi;
 
 /*
  * Задача файла
@@ -20,21 +16,26 @@ date_default_timezone_set('Europe/Moscow');
  * Отправка на почту
  */
 
-define('POSTER_CLIENT_ID', '162');
-define('POSTER_CLIENT_SECRET', 'b1d1d560b773df86da147d36ae2b2294');
+PosterApi::init([
+    'application_id' => POSTER_CLIENT_ID, // Your application id (client_id)
+    'application_secret' => POSTER_CLIENT_SECRET, // secret
+    'redirect_uri' => 'https://vk.com',
+]);
 
-//header("Content-type:application/pdf");
+$oAuthUrl = PosterApi::auth()->getOauthUrl();
 
+// Redirect user to this url to start authorization
+http_redirect($oAuthUrl);
+
+/*
 // Poster Class
 include_once 'class/Poster.class.php';
-
 // PDF Class
-require('fpdf181/fpdf.php');
-
+require('class/fpdf181/fpdf.php');
 // MAIL Class
-require 'PHPMailer-master/src/Exception.php';
-require 'PHPMailer-master/src/PHPMailer.php';
-require 'PHPMailer-master/src/SMTP.php';
+require 'class/PHPMailer-master/src/Exception.php';
+require 'class/PHPMailer-master/src/PHPMailer.php';
+require 'class/PHPMailer-master/src/SMTP.php';
 
 // Получаем данные от Poster
 $code = $_REQUEST['code'];
@@ -114,7 +115,7 @@ try {
     $mail->Password = 'secret';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;   */                                 // TCP port to connect to
-
+/*
     $mail->CharSet = 'UTF-8';
 
     //Recipients
@@ -143,5 +144,5 @@ try {
     echo 'Сообщение не было отправлено. Mailer Error: ', $mail->ErrorInfo;
 }
 
-
+*/
 ?>
