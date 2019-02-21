@@ -29,7 +29,7 @@ PosterApi::init([
 
 $oAuthUrl = PosterApi::auth()->getOauthUrl();
 
-$result = (object)PosterApi::auth()->getOauthToken($_GET['account'], $_GET['code']);
+$result = (object)PosterApi::auth()->getOauthToken('coffeehubofficial', $_GET['code']);
 
 if (empty($result->access_token)) {
     echo "Poster auth error";
