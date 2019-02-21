@@ -52,6 +52,7 @@ echo'</pre>';
 
 $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
+$pdf->SetFont('Arial', '', 12);
 
 $value = 'Выручка: '.$data->response->revenue.'';
 
