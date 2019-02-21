@@ -7,9 +7,8 @@
 
 <?php
 include_once 'config.php';
-//use poster\src\PosterApi;
 
-include_once 'class/poster/src/PosterApi.php';
+use poster\src\PosterApi;
 
 /*
  * Задача файла

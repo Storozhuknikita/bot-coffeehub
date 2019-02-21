@@ -1,0 +1,70 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "45025ef8264e8b578aacea97f39d35ab",
+    "packages": [
+        {
+            "name": "poster/api",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joinposter/api-php.git",
+                "reference": "4ac7d9b0e99e03d77a6bafa5abfe96e5b8abf300"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/joinposter/api-php/zipball/4ac7d9b0e99e03d77a6bafa5abfe96e5b8abf300",
+                "reference": "4ac7d9b0e99e03d77a6bafa5abfe96e5b8abf300",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Denis Ubozhenko",
+                    "role": "CTO"
+                },
+                {
+                    "name": "Vladimir Ivanchenko",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP library which makes Poster API using smooth as glass",
+            "homepage": "https://github.com/joinposter/api-php",
+            "keywords": [
+                "Poster API",
+                "Poster API Binding",
+                "Poster Library",
+                "Poster PHP API",
+                "joinposter",
+                "poster"
+            ],
+            "time": "2018-12-11T10:02:04+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
