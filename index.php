@@ -37,7 +37,7 @@ PosterApi::init ([
 
 // Чтение настроек
 $result = (object)PosterApi::settings()->getAllSettings();
-var_dump($result);
+debug($result);
 
  // Настройка дополнений для аккаунта
 $result =(object)PosterApi::application()->setEntityExtras([
@@ -46,7 +46,7 @@ $result =(object)PosterApi::application()->setEntityExtras([
         'synced' => true
     ]
 ]);
-var_dump ($result);
+debug($result);
 
 
 /*
