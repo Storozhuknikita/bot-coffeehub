@@ -136,7 +136,7 @@ try {
     $mail->AltBody = 'У вас все заебок без HTML';
 
     // Отправка письма
-    $mail->send();
+    //$mail->send();
 
     echo 'Сообщение было отправлено - <a href="https://bot.coffee-hub.ru/reciept.pdf">Download</a> ';
 } catch (Exception $e) {
