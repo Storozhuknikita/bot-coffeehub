@@ -37,8 +37,8 @@ PosterApi::init ([
 $result = (object)PosterApi::settings()->getAllSettings();
 debug($result);
 
-$data = (object))PosterApi::dash()->getSpotsSales();
-$files = (object))PosterApi::clients()->getClients();
+$data = (object)PosterApi::dash()->getSpotsSales();
+$files = (object)PosterApi::clients()->getClients();
 
 $i = 0;
 
