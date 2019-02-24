@@ -2,7 +2,9 @@
 
 class TemplatePDF extends FPDF {
 
-    function Header($logo) {
+    function Header() {
+
+        global $title;
         //Логотип
         $this->Image($logo,10,8,33);
         //шрифт Arial, жирный, размер 15

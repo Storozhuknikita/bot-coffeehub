@@ -72,10 +72,8 @@ foreach ($files->response as $file) {
 $clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . '-' . $month_max . ') - ' . $i . '';
 
 
-$pdf = new TemplatePDF();
-
-$pdf->Header($logo);
-
+$pdf = new TemplatePDF($logo);
+$pdf->SetTitle($logo);
 
 $pdf->AliasNbPages();
 $pdf->AddPage();
