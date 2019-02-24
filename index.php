@@ -70,14 +70,27 @@ foreach ($files->response as $file) {
     }
 }
 $clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . '-' . $month_max . ') - ' . $i . '';
-
-
-$pdf = new TemplatePDF();
-
-$pdf->AddPage();
-
 $value = 'Revenue: '.$data->response->revenue.'';
 $average = 'Middle Invoice: '.$data->response->middle_invoice.'';
+
+
+$pdf = new FPDF('P', 'pt', 'Letter');
+$pdf->AddPage();
+$pdf->SetFont('Arial', '', 12);
+
+
+// HEADER
+//Логотип
+$pdf->Image($title,10,8,33);
+//шрифт Arial, жирный, размер 15
+$pdf->SetFont('Arial','B',15);
+//Перемещаемся вправо
+$pdf->Cell(80);
+//Название
+$pdf->Cell(30,10,'Title',1,0,'C');
+//Разрыв строки
+$pdf->Ln(20);
+
 
 $pdf->SetX(70);
 $pdf->SetFont('Arial', 'I');
@@ -90,24 +103,7 @@ for($i=1;$i<=40;$i++) {
     $pdf->Cell(0,10,'Printing line number '.$i,0,1);
 }
 
-$pdf->Output('reciept.pdf', 'F');
 
-// Генерация PDF и сохранение в файл
-$doc = $pdf->Output('reciept.pdf', 'S');
-/*
-$pdf = new FPDF('P', 'pt', 'Letter');
-$pdf->AddPage();
-$pdf->SetFont('Arial', '', 12);
-
-$value = 'Revenue: '.$data->response->revenue.'';
-$average = 'Middle Invoice: '.$data->response->middle_invoice.'';
-
-$pdf->SetX(70);
-$pdf->SetFont('Arial', 'I');
-
-$pdf->Cell(100, 15, $value, 0, 2);
-$pdf->Cell(100, 15, $average, 0, 2);
-$pdf->Cell(100, 15, $clients);
 
 $pdf->Ln(100);
 

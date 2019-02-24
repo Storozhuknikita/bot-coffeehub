@@ -5,16 +5,7 @@ class TemplatePDF extends FPDF {
     function Header() {
 
         global $title;
-        //Логотип
-        $this->Image($title,10,8,33);
-        //шрифт Arial, жирный, размер 15
-        $this->SetFont('Arial','B',15);
-        //Перемещаемся вправо
-        $this->Cell(80);
-        //Название
-        $this->Cell(30,10,'Title',1,0,'C');
-        //Разрыв строки
-        $this->Ln(20);
+
 
     }
 
