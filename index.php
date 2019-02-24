@@ -33,7 +33,11 @@ PosterApi::init ([
     'access_token' => $auth->access_token,
 ]);
 
-$data = (object)PosterApi::dash()->getSpotsSales();
+
+
+$params = array('dateFrom' => date('Ym01'), 'dateTo' => date('Ymt'));
+
+$data = (object)PosterApi::dash()->getSpotsSales($params);
 $files = (object)PosterApi::clients()->getClients();
 
 $i = 0;
@@ -45,6 +49,7 @@ $month_min = date('n')-1;
 $month_max = date('n')-1;
 $day_min = 1;
 $day_max = 31;
+
 
 foreach ($files->response as $file) {
     $date_active = date_parse($file->date_activale);
