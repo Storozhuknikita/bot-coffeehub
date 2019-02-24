@@ -42,7 +42,7 @@ PosterApi::init ([
 ]);
 
 
-$logo = (object)PosterApi::settings()->getLogo();
+$title = (object)PosterApi::settings()->getLogo();
 $params = array('dateFrom' => date('Ym01'), 'dateTo' => date('Ymt'));
 
 $data = (object)PosterApi::dash()->getSpotsSales($params);
@@ -72,8 +72,8 @@ foreach ($files->response as $file) {
 $clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . '-' . $month_max . ') - ' . $i . '';
 
 
-$pdf = new TemplatePDF($logo);
-$pdf->SetTitle($logo);
+$pdf = new TemplatePDF();
+$pdf->SetTitle($title);
 
 $pdf->AliasNbPages();
 $pdf->AddPage();

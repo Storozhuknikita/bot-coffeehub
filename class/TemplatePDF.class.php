@@ -6,7 +6,7 @@ class TemplatePDF extends FPDF {
 
         global $title;
         //Логотип
-        $this->Image($logo,10,8,33);
+        $this->Image($title,10,8,33);
         //шрифт Arial, жирный, размер 15
         $this->SetFont('Arial','B',15);
         //Перемещаемся вправо
