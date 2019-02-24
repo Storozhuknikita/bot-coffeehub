@@ -49,9 +49,9 @@ $day_max = 31;
 foreach ($files->response as $file) {
     $date_active = date_parse($file->date_activale);
     if (
-        ($date_active->year == $year AND
-            $date_active->month >= $month_min AND $date_active->month <= $month_max) AND
-        ($date_active->day >= $day_min AND $date_active->day <= $day_max)
+        ($date_active['year'] == $year AND
+            $date_active['month'] >= $month_min AND $date_active['month'] <= $month_max) AND
+        ($date_active['day'] >= $day_min AND $date_active['day'] <= $day_max)
     ) {
         $i++;
     }
