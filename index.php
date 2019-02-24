@@ -103,15 +103,13 @@ for($i=1;$i<=40;$i++) {
     $pdf->Cell(0,10,'Printing line number '.$i,0,1);
 }
 
-
-
 $pdf->Ln(100);
 
 $pdf->Output('reciept.pdf', 'F');
 
 // Генерация PDF и сохранение в файл
 $doc = $pdf->Output('reciept.pdf', 'S');
-*/
+
 echo 'Файл отчет готов - <a href="https://bot.coffee-hub.ru/reciept.pdf" target="_blank">Download</a> ';
 
 
