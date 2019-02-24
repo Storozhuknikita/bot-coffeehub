@@ -77,6 +77,9 @@ $pdf->Output('reciept.pdf', 'F');
 // Генерация PDF и сохранение в файл
 $doc = $pdf->Output('reciept.pdf', 'S');
 
+echo 'Файл отчет готов - <a href="https://bot.coffee-hub.ru/reciept.pdf">Download</a> ';
+
+
 /*
 // Подготовка письма
 $mail = new PHPMailer\PHPMailer\PHPMailer();
