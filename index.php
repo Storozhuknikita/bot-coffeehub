@@ -42,7 +42,7 @@ PosterApi::init ([
 ]);
 
 
-
+$logo = (object)PosterApi::settings()->getLogo();
 $params = array('dateFrom' => date('Ym01'), 'dateTo' => date('Ymt'));
 
 $data = (object)PosterApi::dash()->getSpotsSales($params);
@@ -73,10 +73,24 @@ $clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . 
 
 
 $pdf = new TemplatePDF();
+
+$pdf->Header($logo);
+
+
 $pdf->AliasNbPages();
 $pdf->AddPage();
 
 $pdf->SetFont('Times','',12);
+
+$value = 'Revenue: '.$data->response->revenue.'';
+$average = 'Middle Invoice: '.$data->response->middle_invoice.'';
+
+$pdf->SetX(70);
+$pdf->SetFont('Arial', 'I');
+
+$pdf->Cell(100, 15, $value, 0, 2);
+$pdf->Cell(100, 15, $average, 0, 2);
+$pdf->Cell(100, 15, $clients);
 
 for($i=1;$i<=40;$i++) {
     $pdf->Cell(0,10,'Printing line number '.$i,0,1);

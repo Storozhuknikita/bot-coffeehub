@@ -1,9 +1,10 @@
 <?php
 
 class TemplatePDF extends FPDF {
-    function Header() {
+
+    function Header($logo) {
         //Логотип
-        $this->Image('https://pp.userapi.com/c850520/v850520899/95be/JMAwardISGc.jpg',10,8,33);
+        $this->Image($logo,10,8,33);
         //шрифт Arial, жирный, размер 15
         $this->SetFont('Arial','B',15);
         //Перемещаемся вправо
