@@ -73,12 +73,8 @@ $clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . 
 
 
 $pdf = new TemplatePDF();
-$pdf->SetTitle($title);
 
-$pdf->AliasNbPages();
 $pdf->AddPage();
-
-$pdf->SetFont('Times','',12);
 
 $value = 'Revenue: '.$data->response->revenue.'';
 $average = 'Middle Invoice: '.$data->response->middle_invoice.'';
