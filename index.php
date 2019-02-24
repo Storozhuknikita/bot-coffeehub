@@ -12,6 +12,22 @@ require __DIR__.'/vendor/autoload.php';
 include_once 'config/config.php';
 use poster\src\PosterApi;
 
+// Poster Class для авторизации
+include_once 'class/Poster.class.php';
+
+// PDF Class
+require('class/fpdf181/fpdf.php');
+
+// Template PDF
+include_once 'class/TemplatePDF.class.php';
+
+
+// MAIL Class
+require 'class/PHPMailer-master/src/Exception.php';
+require 'class/PHPMailer-master/src/PHPMailer.php';
+require 'class/PHPMailer-master/src/SMTP.php';
+
+
 
 // Получаем данные от Poster
 $code = $_REQUEST['code'];

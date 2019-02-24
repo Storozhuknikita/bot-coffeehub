@@ -14,20 +14,4 @@ function debug($var) {
     echo'</pre>';
 }
 
-
-// Poster Class для авторизации
-include_once '../class/Poster.class.php';
-
-// PDF Class
-require('../class/fpdf181/fpdf.php');
-
-// Template PDF
-include_once '../class/TemplatePDF.class.php';
-
-
-// MAIL Class
-require '../class/PHPMailer-master/src/Exception.php';
-require '../class/PHPMailer-master/src/PHPMailer.php';
-require '../class/PHPMailer-master/src/SMTP.php';
-
 ?>
