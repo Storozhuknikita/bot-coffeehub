@@ -5,3 +5,20 @@
 require_once __DIR__ . '/composer/autoload_real.php';
 
 return ComposerAutoloaderInit785eb264d2a0f020de7efcbf31f29be1::getLoader();
+
+
+
+// Poster Class для авторизации
+include_once '../class/Poster.class.php';
+
+// PDF Class
+require('../class/fpdf181/fpdf.php');
+
+// Template PDF
+include_once '../class/TemplatePDF.class.php';
+
+
+// MAIL Class
+require '../class/PHPMailer-master/src/Exception.php';
+require '../class/PHPMailer-master/src/PHPMailer.php';
+require '../class/PHPMailer-master/src/SMTP.php';

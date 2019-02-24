@@ -1,4 +1,4 @@
-<style type="text/css" href="style.css"></style>
+<style type="text/css" href="style/style.css"></style>
 
 <script type="text/javascript">
     window.addEventListener('load', function () { top.postMessage({hideSpinner: true}, '*') }, false);
@@ -6,22 +6,11 @@
 
 <?php
 
-
 header("content-type:text/html; charset=utf-8");
 
 require __DIR__.'/vendor/autoload.php';
-include_once 'config.php';
+include_once 'config/config.php';
 use poster\src\PosterApi;
-// Poster Class для авторизации
-include_once 'class/Poster.class.php';
-
-// PDF Class
-require('class/fpdf181/fpdf.php');
-// MAIL Class
-require 'class/PHPMailer-master/src/Exception.php';
-require 'class/PHPMailer-master/src/PHPMailer.php';
-require 'class/PHPMailer-master/src/SMTP.php';
-
 
 
 // Получаем данные от Poster
@@ -66,6 +55,22 @@ foreach ($files->response as $file) {
 }
 $clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . '-' . $month_max . ') - ' . $i . '';
 
+
+$pdf = new TemplatePDF();
+$pdf->AliasNbPages();
+$pdf->AddPage();
+
+$pdf->SetFont('Times','',12);
+
+for($i=1;$i<=40;$i++) {
+    $pdf->Cell(0,10,'Printing line number '.$i,0,1);
+}
+
+$pdf->Output('reciept.pdf', 'F');
+
+// Генерация PDF и сохранение в файл
+$doc = $pdf->Output('reciept.pdf', 'S');
+/*
 $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
 $pdf->SetFont('Arial', '', 12);
@@ -86,7 +91,7 @@ $pdf->Output('reciept.pdf', 'F');
 
 // Генерация PDF и сохранение в файл
 $doc = $pdf->Output('reciept.pdf', 'S');
-
+*/
 echo 'Файл отчет готов - <a href="https://bot.coffee-hub.ru/reciept.pdf" target="_blank">Download</a> ';
 
 
