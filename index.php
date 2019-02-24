@@ -70,11 +70,13 @@ $pdf->SetFont('Arial', '', 12);
 $value = 'Revenue: '.$data->response->revenue.'';
 $average = 'Middle Invoice: '.$data->response->middle_invoice.'';
 
-$pdf->SetX(140);
+$pdf->SetX(70);
 $pdf->SetFont('Arial', 'I');
-$pdf->Cell(200, 15, $value, 0, 2);
-$pdf->Cell(200, 15, $average, 0, 2);
-$pdf->Cell(200, 15, $clients);
+
+$pdf->Cell(100, 15, $value, 0, 2);
+$pdf->Cell(100, 15, $average, 0, 2);
+$pdf->Cell(100, 15, $clients);
+
 $pdf->Ln(100);
 
 $pdf->Output('reciept.pdf', 'F');
