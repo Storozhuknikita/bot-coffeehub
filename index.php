@@ -68,13 +68,9 @@ $clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . 
 
 $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
-$pdf->AddFont('NewFont','','ARIAL.php');
-$pdf->SetFont('NewFont','',12);
+$pdf->SetFont('Arial', '', 12);
 
-$value = 'Выручка: '.$data->response->revenue.'';
-
-$value = iconv('utf-8', 'cp1251', $value);
-
+$value = 'Revenue: '.$data->response->revenue.'';
 $average = 'Middle Invoice: '.$data->response->middle_invoice.'';
 
 $pdf->SetX(70);
