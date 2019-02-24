@@ -6,6 +6,9 @@
 
 <?php
 
+
+header("content-type:text/html; charset=utf-8");
+
 require __DIR__.'/vendor/autoload.php';
 include_once 'config.php';
 use poster\src\PosterApi;
@@ -65,9 +68,11 @@ $clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . 
 
 $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
-$pdf->SetFont('Arial', '', 12);
+$pdf->AddFont('NewFont','','ARIAL.php');
 
-$value = 'Revenue: '.$data->response->revenue.'';
+//$pdf->SetFont('Arial', '', 12);
+
+$value = 'Выручка: '.$data->response->revenue.'';
 $average = 'Middle Invoice: '.$data->response->middle_invoice.'';
 
 $pdf->SetX(70);
