@@ -46,7 +46,7 @@ $month_max = date('n')-1;
 $day_min = 1;
 $day_max = 31;
 
-foreach ($files['response'] as $file) {
+foreach ($files->response as $file) {
     $date_active = date_parse($file['date_activale']);
     if (
         ($date_active['year'] == $year AND
@@ -90,7 +90,6 @@ try {
     $mail->Password = 'secret';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;   */                                 // TCP port to connect to
-
 /*
     $mail->CharSet = 'UTF-8';
 
@@ -120,5 +119,5 @@ try {
     echo 'Сообщение не было отправлено. Mailer Error: ', $mail->ErrorInfo;
 }
 
-
+*/
 ?>
