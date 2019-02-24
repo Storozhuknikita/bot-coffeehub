@@ -1,4 +1,3 @@
-
 <style type="text/css" href="style.css"></style>
 
 <script type="text/javascript">
@@ -8,19 +7,18 @@
 <?php
 
 require __DIR__.'/vendor/autoload.php';
-
 include_once 'config.php';
-
 use poster\src\PosterApi;
 
-/*
- * Задача файла
- * Сбор информации о выручке
- * Генерация PDF
- * Отправка на почту
- */
+// PDF Class
+require('class/fpdf181/fpdf.php');
+// MAIL Class
+require 'class/PHPMailer-master/src/Exception.php';
+require 'class/PHPMailer-master/src/PHPMailer.php';
+require 'class/PHPMailer-master/src/SMTP.php';
 
-// Poster Class
+
+// Poster Class для авторизации
 include_once 'class/Poster.class.php';
 
 // Получаем данные от Poster
@@ -39,44 +37,8 @@ PosterApi::init ([
 $result = (object)PosterApi::settings()->getAllSettings();
 debug($result);
 
- // Настройка дополнений для аккаунта
-$result =(object)PosterApi::application()->setEntityExtras([
-    'entity_type ' => 'settings',
-    'extras' => [
-        'synced' => true
-    ]
-]);
-debug($result);
-
-
-/*
-// Poster Class
-include_once 'class/Poster.class.php';
-// PDF Class
-require('class/fpdf181/fpdf.php');
-// MAIL Class
-require 'class/PHPMailer-master/src/Exception.php';
-require 'class/PHPMailer-master/src/PHPMailer.php';
-require 'class/PHPMailer-master/src/SMTP.php';
-
-// Получаем данные от Poster
-$code = $_REQUEST['code'];
-
-// Отправляем запрос в Poster
-$auth = Poster::auth($_REQUEST['code']);
-
-$account_name = $auth->account_name;
-$access_token = $auth->access_token;
-
-// Получить статистику
-$url = 'https://'.$account_name.'.joinposter.com/api/dash.getSpotsSales?token='.$access_token.'';
-$data = json_decode(Poster::sendRequest($url));
-
-
-// Получение клиентов
-$host = 'https://'.$account_name.'.joinposter.com/api/clients.getClientsInfo?token=' . $access_token;
-$files = file_get_contents($host);
-$files = json_decode($files, true);
+$data = (object))PosterApi::dash()->getSpotsSales();
+$files = (object))PosterApi::clients()->getClients();
 
 $i = 0;
 
@@ -100,12 +62,6 @@ foreach ($files['response'] as $file) {
 }
 $clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . '-' . $month_max . ') - ' . $i . '';
 
-
-
-echo'<pre>';
-print_r($data);
-echo'</pre>';
-
 $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
 $pdf->SetFont('Arial', '', 12);
@@ -125,6 +81,7 @@ $pdf->Output('reciept.pdf', 'F');
 // Генерация PDF и сохранение в файл
 $doc = $pdf->Output('reciept.pdf', 'S');
 
+/*
 // Подготовка письма
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 try {
@@ -137,6 +94,7 @@ try {
     $mail->Password = 'secret';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;   */                                 // TCP port to connect to
+
 /*
     $mail->CharSet = 'UTF-8';
 
@@ -166,5 +124,5 @@ try {
     echo 'Сообщение не было отправлено. Mailer Error: ', $mail->ErrorInfo;
 }
 
-*/
+
 ?>
