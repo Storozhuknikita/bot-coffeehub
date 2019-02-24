@@ -9,6 +9,8 @@
 require __DIR__.'/vendor/autoload.php';
 include_once 'config.php';
 use poster\src\PosterApi;
+// Poster Class для авторизации
+include_once 'class/Poster.class.php';
 
 // PDF Class
 require('class/fpdf181/fpdf.php');
@@ -18,8 +20,6 @@ require 'class/PHPMailer-master/src/PHPMailer.php';
 require 'class/PHPMailer-master/src/SMTP.php';
 
 
-// Poster Class для авторизации
-include_once 'class/Poster.class.php';
 
 // Получаем данные от Poster
 $code = $_REQUEST['code'];
@@ -33,16 +33,8 @@ PosterApi::init ([
     'access_token' => $auth->access_token,
 ]);
 
-// Чтение настроек
-//$result = (object)PosterApi::settings()->getAllSettings();
-//debug($result);
-
 $data = (object)PosterApi::dash()->getSpotsSales();
 $files = (object)PosterApi::clients()->getClients();
-
-debug($data);
-debug($files);
-
 
 $i = 0;
 
