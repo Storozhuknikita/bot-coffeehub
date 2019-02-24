@@ -34,11 +34,15 @@ PosterApi::init ([
 ]);
 
 // Чтение настроек
-$result = (object)PosterApi::settings()->getAllSettings();
-debug($result);
+//$result = (object)PosterApi::settings()->getAllSettings();
+//debug($result);
 
 $data = (object)PosterApi::dash()->getSpotsSales();
 $files = (object)PosterApi::clients()->getClients();
+
+debug($data);
+debug($files);
+
 
 $i = 0;
 
