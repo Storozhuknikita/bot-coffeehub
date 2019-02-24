@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3badfbc7-1d98-4c69-ab1d-931acf8fe654" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/class/TemplatePDF.class.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/config/config.php" afterPath="$PROJECT_DIR$/config/config.php" />
       <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,18 +21,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TemplatePDF.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/class/TemplatePDF.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="290">
+              <caret line="82" column="14" lean-forward="true" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -40,8 +32,10 @@
         <entry file="file://$PROJECT_DIR$/config/config.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <marker date="1550761010613" expanded="true" signature="205:260" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -183,12 +177,12 @@
       <workItem from="1550585273165" duration="7232000" />
       <workItem from="1550754972725" duration="5616000" />
       <workItem from="1550914992956" duration="87000" />
-      <workItem from="1551015435445" duration="4044000" />
+      <workItem from="1551015435445" duration="4112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20070000" />
+    <option name="totallyTimeSpent" value="20138000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -279,7 +273,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
+          <folding>
+            <marker date="1550761010613" expanded="true" signature="205:260" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -487,8 +483,10 @@
     <entry file="file://$PROJECT_DIR$/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <marker date="1550761010613" expanded="true" signature="205:260" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -502,8 +500,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+        <state relative-caret-position="290">
+          <caret line="82" column="14" lean-forward="true" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
           <folding />
         </state>
       </provider>

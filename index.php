@@ -6,22 +6,17 @@
 
 <?php
 
+
 header("content-type:text/html; charset=utf-8");
 
 require __DIR__.'/vendor/autoload.php';
 include_once 'config/config.php';
 use poster\src\PosterApi;
-
 // Poster Class для авторизации
 include_once 'class/Poster.class.php';
 
 // PDF Class
 require('class/fpdf181/fpdf.php');
-
-// Template PDF
-include_once 'class/TemplatePDF.class.php';
-
-
 // MAIL Class
 require 'class/PHPMailer-master/src/Exception.php';
 require 'class/PHPMailer-master/src/PHPMailer.php';
@@ -42,7 +37,7 @@ PosterApi::init ([
 ]);
 
 
-$title = (object)PosterApi::settings()->getLogo();
+
 $params = array('dateFrom' => date('Ym01'), 'dateTo' => date('Ymt'));
 
 $data = (object)PosterApi::dash()->getSpotsSales($params);
@@ -70,16 +65,13 @@ foreach ($files->response as $file) {
     }
 }
 $clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . '-' . $month_max . ') - ' . $i . '';
-$value = 'Revenue: '.$data->response->revenue.'';
-$average = 'Middle Invoice: '.$data->response->middle_invoice.'';
-
 
 $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
 $pdf->SetFont('Arial', '', 12);
 
-//Логотип
-$pdf->Image($title,10,8,33);
+$value = 'Revenue: '.$data->response->revenue.'';
+$average = 'Middle Invoice: '.$data->response->middle_invoice.'';
 
 $pdf->SetX(70);
 $pdf->SetFont('Arial', 'I');

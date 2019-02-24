@@ -8,6 +8,7 @@ error_reporting(E_ALL);
 date_default_timezone_set('Europe/Moscow');
 
 
+
 function debug($var) {
     echo'<pre>';
     print_r($var);
