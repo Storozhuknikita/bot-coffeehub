@@ -72,6 +72,9 @@ $pdf->AddFont('NewFont','','ARIAL.php');
 $pdf->SetFont('NewFont','',12);
 
 $value = 'Выручка: '.$data->response->revenue.'';
+
+$value = iconv('utf-8', 'cp1251', $value);
+
 $average = 'Middle Invoice: '.$data->response->middle_invoice.'';
 
 $pdf->SetX(70);
