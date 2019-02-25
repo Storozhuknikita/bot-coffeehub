@@ -44,8 +44,6 @@ $files = (object)PosterApi::clients()->getClients(); // Получение кл�
 $finance = (object)PosterApi::finance()->getAccounts(); // Получение счетов
 $orders = (object)PosterApi::transactions()->getTransactions($params2); // Получение чеков
 
-debug($orders);
-
 $logo = (object)PosterApi::settings()->getLogo(); // Получаем лого
 
 //debug($logo);
