@@ -44,7 +44,7 @@ $finance = (object)\poster\src\PosterApi::finance()->getAccounts(); // Полу�
 
 $logo = (object)PosterApi::settings()->getLogo(); // Получаем лого
 
-debug($logo);
+//debug($logo);
 
 $b = 0; // Начальный баланс счетов
 
@@ -97,7 +97,7 @@ $pdf->SetY(20);
 
 $pdf->SetFont('Arial','B',18);
 $pdf->Cell(100, 15, $title, 0, 2); // Заголовок листа
-$pdf->Image('https://joinposter.com'.$logo, 10, 10, 35, 35);
+$pdf->Image('https://joinposter.com'.$logo->response->value, 10, 10, 35, 35);
 
 $pdf->SetX(70);
 $pdf->SetY(100);
