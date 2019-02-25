@@ -40,8 +40,9 @@ $params = array('dateFrom' => date('Ym01'), 'dateTo' => date('Ymt'));
 // Берем данные из Poster
 $data = (object)\poster\src\PosterApi::dash()->getSpotsSales($params); // Получение выручки
 $files = (object)\poster\src\PosterApi::clients()->getClients(); // Получение клиентов
-
 $finance = (object)\poster\src\PosterApi::finance()->getAccounts(); // Получение счетов
+
+$logo = (object)PosterApi::settings()->getLogo(); // Получаем лого
 
 $b = 0; // Начальный баланс счетов
 
@@ -92,9 +93,9 @@ $pdf->SetFont('Arial', '', 12);
 $pdf->SetX(70);
 $pdf->SetY(20);
 
-$pdf->SetFont('Arial','B',20);
+$pdf->SetFont('Arial','B',18);
 $pdf->Cell(100, 15, $title, 0, 2); // Заголовок листа
-
+$pdf->Image($logo);
 
 $pdf->SetX(70);
 $pdf->SetY(100);
