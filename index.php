@@ -44,15 +44,24 @@ $files = (object)PosterApi::clients()->getClients(); // Получение кл�
 $finance = (object)PosterApi::finance()->getAccounts(); // Получение счетов
 $orders = (object)PosterApi::transactions()->getTransactions($params2); // Получение чеков
 
+$storage = (object)PosterApi::storage()->getStorageLeftovers(); // Получить складские остатки
+
+
 $logo = (object)PosterApi::settings()->getLogo(); // Получаем лого
 
 //debug($logo);
 
-$b = 0; // Начальный баланс счетов
+$balance_sum = 0; // Начальный баланс для счетов
+$storage_sum = 0; // Начальный баланс для склада
+
+// Просчет суммы по складам
+foreach ($storage->response as $s) {
+    $storage_sum = $s->storage_ingredient_sum + $storage_sum;
+}
 
 // Просчет суммы по всем счетам
 foreach ($finance->response as $f) {
-    $b = $f->balance + $b;
+    $balance_sum = $f->balance + $balance_sum;
 }
 
 $i = 0; // Начальный счетчик клиентов
@@ -79,7 +88,11 @@ foreach ($files->response as $file) {
 
 // Подготовка финальных данных для генерации PDF
 // Финансы
-$finance = 'Balance: '.substr($b,0,-2); // Удаляем последние 2 цифры (копейки)
+$finance = 'Balance: '.substr($balance_sum,0,-2); // Удаляем последние 2 цифры (копейки)
+// Финансы
+$storage = 'Balance Storage: '.substr($storage_sum,0,-2); // Удаляем последние 2 цифры (копейки)
+
+
 
 // Статистика
 $value = 'Revenue: '.$data->response->revenue.'';
