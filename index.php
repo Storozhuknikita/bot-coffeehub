@@ -49,8 +49,6 @@ $storage = (object)PosterApi::storage()->getStorageLeftovers(); // Получи�
 
 $logo = (object)PosterApi::settings()->getLogo(); // Получаем лого
 
-//debug($logo);
-
 $balance_sum = 0; // Начальный баланс для счетов
 $storage_sum = 0; // Начальный баланс для склада
 
@@ -68,10 +66,10 @@ $i = 0; // Начальный счетчик клиентов
 
 // Данные для подсчета новых клиентов
 $year = date('Y');
-$month_min = date('n')-1;
-$month_max = date('n')-1;
+$month_min = date('n');
+$month_max = date('n');
 $day_min = 1;
-$day_max = 31;
+$day_max = date('t');
 
 // Считаем количество новых клиентов
 foreach ($files->response as $file) {
