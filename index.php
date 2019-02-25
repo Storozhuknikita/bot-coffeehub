@@ -36,12 +36,13 @@ PosterApi::init ([
 
 
 $params = array('dateFrom' => date('Ym01'), 'dateTo' => date('Ymt'));
+$params2 = array('date_from' => date('Y-m-01'), 'date_to' => date('Y-m-t')); // для чеков
 
 // Берем данные из Poster
 $data = (object)PosterApi::dash()->getSpotsSales($params); // Получение выручки
 $files = (object)PosterApi::clients()->getClients(); // Получение клиентов
 $finance = (object)PosterApi::finance()->getAccounts(); // Получение счетов
-$orders = (object)PosterApi::transactions()->getTransactions($params); // Получение чеков
+$orders = (object)PosterApi::transactions()->getTransactions($params2); // Получение чеков
 
 debug($orders);
 
