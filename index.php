@@ -89,7 +89,10 @@ $pdf->SetX(70);
 
 $pdf->SetFont('Arial', 'I');
 
+$pdf->SetFont('Arial','B',14);
 $pdf->Cell(100, 15, 'Financial Balance', 0, 2); // Заголовок "Баланс"
+$pdf->SetFont('');
+
 $pdf->Cell(100, 15, $b, 0, 2); // Баланс счетов
 
 $pdf->Cell(100, 15, 'Storage', 0, 2); // Заголовок "Склад"
