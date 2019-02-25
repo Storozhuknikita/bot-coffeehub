@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3badfbc7-1d98-4c69-ab1d-931acf8fe654" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/class/fpdf181/font/ARIAL.php" afterPath="" />
       <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +19,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="78" column="62" lean-forward="true" selection-start-line="78" selection-start-column="62" selection-end-line="78" selection-end-column="62" />
+            <state relative-caret-position="320">
+              <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -176,12 +174,12 @@
       <workItem from="1550754972725" duration="5616000" />
       <workItem from="1550914992956" duration="87000" />
       <workItem from="1551015435445" duration="4375000" />
-      <workItem from="1551115403206" duration="1106000" />
+      <workItem from="1551115403206" duration="1276000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21507000" />
+    <option name="totallyTimeSpent" value="21677000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -451,8 +449,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="78" column="62" lean-forward="true" selection-start-line="78" selection-start-column="62" selection-end-line="78" selection-end-column="62" />
+        <state relative-caret-position="320">
+          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding />
         </state>
       </provider>

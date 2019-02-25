@@ -47,7 +47,7 @@ $b = 0; // Начальный баланс счетов
 
 // Просчет суммы по всем счетам
 foreach ($finance->response as $balance) {
-    $b = $balance->balance + $b;
+    $b = $balance['balance'] + $b;
 }
 
 $i = 0; // Начальный счетчик клиентов
@@ -76,7 +76,7 @@ $pdf->AddPage();
 $pdf->SetFont('Arial', '', 12);
 
 // Финансы
-$finance = 'Balance: '.$b.''.$finance->response->currency_code;
+$finance = 'Balance: '.$b.''.$finance->response['currency_code'];
 
 // Маркетинг
 $clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . '-' . $month_max . ') - ' . $i . '';
@@ -111,7 +111,7 @@ $pdf->Cell(100, 15, 'Bonus: ', 0, 2); // Бонусами
 
 $pdf->Ln(100);
 
-//$pdf->Output('reciept.pdf', 'F'); // Записываем в файл
+$pdf->Output('reciept.pdf', 'F'); // Записываем в файл
 
 // Генерация PDF и сохранение в файл
 $doc = $pdf->Output('reciept.pdf', 'S');
