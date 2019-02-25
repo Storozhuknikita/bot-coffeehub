@@ -86,6 +86,7 @@ $value = 'Revenue: '.$data->response->revenue.'';
 $average = 'Middle Invoice: '.$data->response->middle_invoice.'';
 
 $pdf->SetX(70);
+
 $pdf->SetFont('Arial', 'I');
 
 $pdf->Cell(100, 15, 'Financial Balance', 0, 2); // Заголовок "Баланс"
@@ -95,8 +96,7 @@ $pdf->Cell(100, 15, 'Storage', 0, 2); // Заголовок "Склад"
 
 
 $pdf->Cell(100, 15, 'Marketing', 0, 2); // Заголовок "Макретинг"
-$pdf->Cell(100, 15, $clients); // Записываем количество клиентов
-
+$pdf->Cell(200, 15, $clients); // Записываем количество клиентов
 
 
 $pdf->Cell(100, 15, 'Statistics', 0, 2); // Заголовок "Статистика"
