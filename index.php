@@ -95,7 +95,7 @@ $pdf->SetY(20);
 
 $pdf->SetFont('Arial','B',18);
 $pdf->Cell(100, 15, $title, 0, 2); // Заголовок листа
-$pdf->Image($logo, 10, 10, -300);
+$pdf->Image($logo, 10, 10, 35, 35);
 
 $pdf->SetX(70);
 $pdf->SetY(100);
