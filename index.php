@@ -44,6 +44,8 @@ $finance = (object)\poster\src\PosterApi::finance()->getAccounts(); // Полу�
 
 $logo = (object)PosterApi::settings()->getLogo(); // Получаем лого
 
+debug($logo);
+
 $b = 0; // Начальный баланс счетов
 
 // Просчет суммы по всем счетам
