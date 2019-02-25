@@ -74,14 +74,14 @@ foreach ($files->response as $file) {
 
 // Подготовка финальных данных для генерации PDF
 // Финансы
-$finance = 'Balance: '.substr($b,0,-2).''.$finance->response->currency_code; // Удаляем последние 2 цифры (копейки)
+$finance = 'Balance: '.substr($b,0,-2); // Удаляем последние 2 цифры (копейки)
 
 // Маркетинг
 $clients = 'New clients (' . $day_min . '-' . $month_min . '-' .$year. ') - (' . $day_max . '-' . $month_max . '-' . $year . ') - ' . $i . '';
 
 // Статистика
 $value = 'Revenue: '.$data->response->revenue.'';
-$average = 'Middle Invoice: '.$data->response->middle_invoice.'';
+$average = 'Middle Invoice: '.round($data->response->middle_invoice).''; // Округляем средний чек в большую сторону, избавляем от десятых
 
 
 // Подготовка PDF
@@ -95,7 +95,9 @@ $pdf->SetX(70);
 $pdf->SetFont('Arial','B',14);
 $pdf->Cell(100, 15, 'Financial Balance', 0, 2); // Заголовок "Баланс"
 $pdf->SetFont('');
-$pdf->Cell(100, 15, $b, 0, 2); // Баланс счетов
+$pdf->Cell(100, 15, $finance, 0, 2); // Баланс всех счетов
+$pdf->Cell(100, 15, ' ', 0, 2); // Пустая строка
+
 
 
 // Склад
@@ -103,13 +105,14 @@ $pdf->SetFont('Arial','B',14);
 $pdf->Cell(100, 15, 'Storage', 0, 2); // Заголовок "Склад"
 $pdf->SetFont('');
 
-
+// Маркетинг
 $pdf->SetFont('Arial','B',14);
 $pdf->Cell(100, 15, 'Marketing', 0, 2); // Заголовок "Макретинг"
 $pdf->SetFont('');
 
 $pdf->Cell(300, 15, $clients, 0, 2); // Записываем количество клиентов
 
+// Статистика
 $pdf->SetFont('Arial','B',14);
 $pdf->Cell(100, 15, 'Statistics', 0, 2); // Заголовок "Статистика"
 $pdf->SetFont('');
