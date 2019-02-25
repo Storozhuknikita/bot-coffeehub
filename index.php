@@ -38,9 +38,11 @@ PosterApi::init ([
 $params = array('dateFrom' => date('Ym01'), 'dateTo' => date('Ymt'));
 
 // Берем данные из Poster
-$data = (object)\poster\src\PosterApi::dash()->getSpotsSales($params); // Получение выручки
-$files = (object)\poster\src\PosterApi::clients()->getClients(); // Получение клиентов
-$finance = (object)\poster\src\PosterApi::finance()->getAccounts(); // Получение счетов
+$data = (object)PosterApi::dash()->getSpotsSales($params); // Получение выручки
+$files = (object)PosterApi::clients()->getClients(); // Получение клиентов
+$finance = (object)PosterApi::finance()->getAccounts(); // Получение счетов
+$orders = (object)PosterApi::transactions()->getTransactions($params); // Получение чеков
+
 
 $logo = (object)PosterApi::settings()->getLogo(); // Получаем лого
 
@@ -97,7 +99,7 @@ $pdf->SetY(20);
 
 $pdf->SetFont('Arial','B',18);
 $pdf->Cell(100, 15, $title, 0, 2); // Заголовок листа
-$pdf->Image('https://joinposter.com'.$logo->response->value, 10, 10, 35, 35);
+//$pdf->Image('https://joinposter.com'.$logo->response->value, 10, 10, 35, 35);
 
 $pdf->SetX(70);
 $pdf->SetY(100);
@@ -137,7 +139,7 @@ $pdf->SetFont('');
 $pdf->Cell(100, 15, 'All Objects', 0, 2); // Выручка
 $pdf->Cell(100, 15, $value, 0, 2); // Выручка
 $pdf->Cell(100, 15, $average, 0, 2); // Средний чек
-$pdf->Cell(100, 15, 'Count order: ', 0, 2); // Количество чеков
+$pdf->Cell(100, 15, 'Count order: '.$orders->response->count, 0, 2); // Количество чеков
 
 $pdf->Cell(100, 15, 'Food Cost: ', 0, 2); // Food Cost
 $pdf->Cell(100, 15, 'Cash: ', 0, 2); // Наличные
