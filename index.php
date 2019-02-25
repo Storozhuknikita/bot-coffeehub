@@ -71,12 +71,10 @@ foreach ($files->response as $file) {
     }
 }
 
-$pdf = new FPDF('P', 'pt', 'Letter');
-$pdf->AddPage();
-$pdf->SetFont('Arial', '', 12);
 
+// Подготовка финальных данных для генерации PDF
 // Финансы
-$finance = 'Balance: '.$b.''.$finance->response['currency_code'];
+$finance = 'Balance: '.substr($b,0,-2).''.$finance->response->currency_code; // Удаляем последние 2 цифры (копейки)
 
 // Маркетинг
 $clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . '-' . $month_max . ') - ' . $i . '';
@@ -85,23 +83,37 @@ $clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . 
 $value = 'Revenue: '.$data->response->revenue.'';
 $average = 'Middle Invoice: '.$data->response->middle_invoice.'';
 
+
+// Подготовка PDF
+$pdf = new FPDF('P', 'pt', 'Letter');
+$pdf->AddPage();
+$pdf->SetFont('Arial', '', 12);
+
 $pdf->SetX(70);
 
-$pdf->SetFont('Arial', 'I');
-
+// Финансы
 $pdf->SetFont('Arial','B',14);
 $pdf->Cell(100, 15, 'Financial Balance', 0, 2); // Заголовок "Баланс"
 $pdf->SetFont('');
-
 $pdf->Cell(100, 15, $b, 0, 2); // Баланс счетов
 
+
+// Склад
+$pdf->SetFont('Arial','B',14);
 $pdf->Cell(100, 15, 'Storage', 0, 2); // Заголовок "Склад"
+$pdf->SetFont('');
 
 
+$pdf->SetFont('Arial','B',14);
 $pdf->Cell(100, 15, 'Marketing', 0, 2); // Заголовок "Макретинг"
+$pdf->SetFont('');
+
 $pdf->Cell(300, 15, $clients, 0, 2); // Записываем количество клиентов
 
+$pdf->SetFont('Arial','B',14);
 $pdf->Cell(100, 15, 'Statistics', 0, 2); // Заголовок "Статистика"
+$pdf->SetFont('');
+
 $pdf->Cell(100, 15, $value, 0, 2); // Выручка
 $pdf->Cell(100, 15, $average, 0, 2); // Средний чек
 $pdf->Cell(100, 15, 'Food Cost: ', 0, 2); // Food Cost
