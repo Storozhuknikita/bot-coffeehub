@@ -40,11 +40,13 @@ $params2 = array('date_from' => date('Y-m-01'), 'date_to' => date('Y-m-t')); // 
 
 // Берем данные из Poster
 $data = (object)PosterApi::dash()->getSpotsSales($params); // Получение выручки
-$files = (object)PosterApi::clients()->getClients(); // Получение клиентов
+$clients = (object)PosterApi::clients()->getClients(); // Получение клиентов
 $finance = (object)PosterApi::finance()->getAccounts(); // Получение счетов
 $orders = (object)PosterApi::transactions()->getTransactions($params2); // Получение чеков
 
 $storage = (object)PosterApi::storage()->getStorageLeftovers(); // Получить складские остатки
+
+$settings = (object)PosterApi::settings()->getCompanyName();
 
 
 $logo = (object)PosterApi::settings()->getLogo(); // Получаем лого
@@ -71,9 +73,11 @@ $month_max = date('n');
 $day_min = 1;
 $day_max = date('t');
 
+$count_clients = 0;
 // Считаем количество новых клиентов
-foreach ($files->response as $file) {
-    $date_active = date_parse($file->date_activale);
+foreach ($clients->response as $client) {
+    $count_clients++;
+    $date_active = date_parse($client->date_activale);
     if (
         ($date_active['year'] == $year AND
             $date_active['month'] >= $month_min AND $date_active['month'] <= $month_max) AND
@@ -87,7 +91,8 @@ foreach ($files->response as $file) {
 // Подготовка финальных данных для генерации PDF
 // Финансы
 $finance = 'Balance: '.substr($balance_sum,0,-2); // Удаляем последние 2 цифры (копейки)
-// Финансы
+
+// Склад
 $storage = 'Balance Storage: '.substr($storage_sum,0,-2); // Удаляем последние 2 цифры (копейки)
 
 
@@ -109,6 +114,8 @@ $pdf->SetX(70);
 $pdf->SetY(20);
 
 $pdf->SetFont('Arial','B',18);
+$pdf->Cell(100, 15, $settings->response->value, 0, 2); // Компания
+
 $pdf->Cell(100, 15, $title, 0, 2); // Заголовок листа
 //$pdf->Image('https://joinposter.com'.$logo->response->value, 10, 10, 35, 35);
 
@@ -137,7 +144,7 @@ $pdf->SetFont('Arial','B',16);
 $pdf->Cell(100, 15, 'Marketing', 0, 2); // Заголовок "Макретинг"
 $pdf->SetFont('');
 
-$pdf->Cell(300, 15, 'Clients: ', 0, 2); // Записываем количество клиентов
+$pdf->Cell(300, 15, 'Clients: '.$count_clients, 0, 2); // Записываем количество клиентов
 $pdf->Cell(300, 15, 'New Clients: '.$i, 0, 2); // Записываем количество новых клиентов
 $pdf->Cell(100, 15, ' ', 0, 2); // Пустая строка
 
