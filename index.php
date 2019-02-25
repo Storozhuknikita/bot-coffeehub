@@ -129,7 +129,7 @@ $pdf->Cell(100, 15, ' ', 0, 2); // Пустая строка
 $pdf->SetFont('Arial','B',16);
 $pdf->Cell(100, 15, 'Storage', 0, 2); // Заголовок "Склад"
 $pdf->SetFont('');
-$pdf->Cell(100, 15, 'Balance Storage: ', 0, 2); // Баланс Склада
+$pdf->Cell(100, 15, $storage, 0, 2); // Баланс Склада
 $pdf->Cell(100, 15, 'Withdrawals From The Warehouse: ', 0, 2); // Кол-во списаний
 $pdf->Cell(100, 15, ' ', 0, 2); // Пустая строка
 
