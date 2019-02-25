@@ -89,14 +89,15 @@ $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
 $pdf->SetFont('Arial', '', 12);
 
-$pdf->SetX(150);
+$pdf->SetX(70);
+$pdf->SetY(20);
 
 $pdf->SetFont('Arial','B',20);
 $pdf->Cell(100, 15, $title, 0, 2); // Заголовок листа
 
 
 $pdf->SetX(70);
-$pdf->SetY(20);
+$pdf->SetY(100);
 // Финансы
 $pdf->SetFont('Arial','B',16);
 $pdf->Cell(100, 15, 'Financial Balance', 0, 2); // Заголовок "Баланс"
