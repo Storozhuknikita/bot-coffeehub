@@ -76,12 +76,12 @@ foreach ($files->response as $file) {
 // Финансы
 $finance = 'Balance: '.substr($b,0,-2); // Удаляем последние 2 цифры (копейки)
 
-// Маркетинг
-//$clients = 'New clients (' . $day_min . '-' . $month_min . '-' .$year. ') - (' . $day_max . '-' . $month_max . '-' . $year . ') - ' . $i . '';
-
 // Статистика
 $value = 'Revenue: '.$data->response->revenue.'';
 $average = 'Middle Invoice: '.round($data->response->middle_invoice).''; // Округляем средний чек в большую сторону, избавляем от десятых
+
+// Заголовок
+$title = 'Company Performance Report For (' . $day_min . '-' . $month_min . '-' .$year. ') - (' . $day_max . '-' . $month_max . '-' . $year . ') ';
 
 
 // Подготовка PDF
@@ -89,8 +89,14 @@ $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
 $pdf->SetFont('Arial', '', 12);
 
-$pdf->SetX(70);
+$pdf->SetX(150);
 
+$pdf->SetFont('Arial','B',20);
+$pdf->Cell(100, 15, $title, 0, 2); // Заголовок листа
+
+
+$pdf->SetX(70);
+$pdf->SetY(20);
 // Финансы
 $pdf->SetFont('Arial','B',16);
 $pdf->Cell(100, 15, 'Financial Balance', 0, 2); // Заголовок "Баланс"
