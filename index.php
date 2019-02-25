@@ -52,14 +52,14 @@ foreach ($finance->response as $f) {
 
 $i = 0; // Начальный счетчик клиентов
 
-// данные для фильтров
+// Данные для подсчета новых клиентов
 $year = date('Y');
 $month_min = date('n')-1;
 $month_max = date('n')-1;
 $day_min = 1;
 $day_max = 31;
 
-
+// Считаем количество новых клиентов
 foreach ($files->response as $file) {
     $date_active = date_parse($file->date_activale);
     if (
@@ -77,7 +77,7 @@ foreach ($files->response as $file) {
 $finance = 'Balance: '.substr($b,0,-2); // Удаляем последние 2 цифры (копейки)
 
 // Маркетинг
-$clients = 'New clients (' . $day_min . '-' . $month_min . '-' .$year. ') - (' . $day_max . '-' . $month_max . '-' . $year . ') - ' . $i . '';
+//$clients = 'New clients (' . $day_min . '-' . $month_min . '-' .$year. ') - (' . $day_max . '-' . $month_max . '-' . $year . ') - ' . $i . '';
 
 // Статистика
 $value = 'Revenue: '.$data->response->revenue.'';
@@ -104,6 +104,8 @@ $pdf->Cell(100, 15, ' ', 0, 2); // Пустая строка
 $pdf->SetFont('Arial','B',16);
 $pdf->Cell(100, 15, 'Storage', 0, 2); // Заголовок "Склад"
 $pdf->SetFont('');
+$pdf->Cell(100, 15, 'Balance Storage: ', 0, 2); // Баланс Склада
+$pdf->Cell(100, 15, 'Withdrawals From The Warehouse: ', 0, 2); // Кол-во списаний
 $pdf->Cell(100, 15, ' ', 0, 2); // Пустая строка
 
 
@@ -112,7 +114,8 @@ $pdf->SetFont('Arial','B',16);
 $pdf->Cell(100, 15, 'Marketing', 0, 2); // Заголовок "Макретинг"
 $pdf->SetFont('');
 
-$pdf->Cell(300, 15, $clients, 0, 2); // Записываем количество клиентов
+$pdf->Cell(300, 15, 'Clients: ', 0, 2); // Записываем количество клиентов
+$pdf->Cell(300, 15, 'New Clients: '.$i, 0, 2); // Записываем количество новых клиентов
 $pdf->Cell(100, 15, ' ', 0, 2); // Пустая строка
 
 
@@ -121,8 +124,11 @@ $pdf->SetFont('Arial','B',16);
 $pdf->Cell(100, 15, 'Statistics', 0, 2); // Заголовок "Статистика"
 $pdf->SetFont('');
 
+$pdf->Cell(100, 15, 'All Objects', 0, 2); // Выручка
 $pdf->Cell(100, 15, $value, 0, 2); // Выручка
 $pdf->Cell(100, 15, $average, 0, 2); // Средний чек
+$pdf->Cell(100, 15, 'Count order: ', 0, 2); // Количество чеков
+
 $pdf->Cell(100, 15, 'Food Cost: ', 0, 2); // Food Cost
 $pdf->Cell(100, 15, 'Cash: ', 0, 2); // Наличные
 $pdf->Cell(100, 15, 'Cart: ', 0, 2); // Карта
