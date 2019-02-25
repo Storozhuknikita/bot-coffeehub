@@ -77,7 +77,7 @@ foreach ($files->response as $file) {
 $finance = 'Balance: '.substr($b,0,-2).''.$finance->response->currency_code; // Удаляем последние 2 цифры (копейки)
 
 // Маркетинг
-$clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . '-' . $month_max . ') - ' . $i . '';
+$clients = 'New clients (' . $day_min . '-' . $month_min . '-' .$year. ') - (' . $day_max . '-' . $month_max . '-' . $year . ') - ' . $i . '';
 
 // Статистика
 $value = 'Revenue: '.$data->response->revenue.'';
