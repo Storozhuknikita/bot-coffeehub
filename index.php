@@ -92,7 +92,7 @@ $pdf->SetFont('Arial', '', 12);
 $pdf->SetX(70);
 
 // Финансы
-$pdf->SetFont('Arial','B',14);
+$pdf->SetFont('Arial','B',16);
 $pdf->Cell(100, 15, 'Financial Balance', 0, 2); // Заголовок "Баланс"
 $pdf->SetFont('');
 $pdf->Cell(100, 15, $finance, 0, 2); // Баланс всех счетов
@@ -101,19 +101,23 @@ $pdf->Cell(100, 15, ' ', 0, 2); // Пустая строка
 
 
 // Склад
-$pdf->SetFont('Arial','B',14);
+$pdf->SetFont('Arial','B',16);
 $pdf->Cell(100, 15, 'Storage', 0, 2); // Заголовок "Склад"
 $pdf->SetFont('');
+$pdf->Cell(100, 15, ' ', 0, 2); // Пустая строка
+
 
 // Маркетинг
-$pdf->SetFont('Arial','B',14);
+$pdf->SetFont('Arial','B',16);
 $pdf->Cell(100, 15, 'Marketing', 0, 2); // Заголовок "Макретинг"
 $pdf->SetFont('');
 
 $pdf->Cell(300, 15, $clients, 0, 2); // Записываем количество клиентов
+$pdf->Cell(100, 15, ' ', 0, 2); // Пустая строка
+
 
 // Статистика
-$pdf->SetFont('Arial','B',14);
+$pdf->SetFont('Arial','B',16);
 $pdf->Cell(100, 15, 'Statistics', 0, 2); // Заголовок "Статистика"
 $pdf->SetFont('');
 
