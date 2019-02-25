@@ -6,12 +6,12 @@
 
 <?php
 
-
 header("content-type:text/html; charset=utf-8");
 
 require __DIR__.'/vendor/autoload.php';
 include_once 'config/config.php';
 use poster\src\PosterApi;
+
 // Poster Class для авторизации
 include_once 'class/Poster.class.php';
 
@@ -21,8 +21,6 @@ require('class/fpdf181/fpdf.php');
 require 'class/PHPMailer-master/src/Exception.php';
 require 'class/PHPMailer-master/src/PHPMailer.php';
 require 'class/PHPMailer-master/src/SMTP.php';
-
-
 
 // Получаем данные от Poster
 $code = $_REQUEST['code'];
@@ -37,16 +35,24 @@ PosterApi::init ([
 ]);
 
 
-
 $params = array('dateFrom' => date('Ym01'), 'dateTo' => date('Ymt'));
 
-$data = (object)PosterApi::dash()->getSpotsSales($params);
-$files = (object)PosterApi::clients()->getClients();
+// Берем данные из Poster
+$data = (object)\poster\src\PosterApi::dash()->getSpotsSales($params); // Получение выручки
+$files = (object)\poster\src\PosterApi::clients()->getClients(); // Получение клиентов
 
-$i = 0;
+$finance = (object)\poster\src\PosterApi::finance()->getAccounts(); // Получение счетов
+
+$b = 0; // Начальный баланс счетов
+
+// Просчет суммы по всем счетам
+foreach ($finance->response as $balance) {
+    $b = $balance->balance + $b;
+}
+
+$i = 0; // Начальный счетчик клиентов
 
 // данные для фильтров
-//$year = $_POST['year'];
 $year = date('Y');
 $month_min = date('n')-1;
 $month_max = date('n')-1;
@@ -64,25 +70,48 @@ foreach ($files->response as $file) {
         $i++;
     }
 }
-$clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . '-' . $month_max . ') - ' . $i . '';
 
 $pdf = new FPDF('P', 'pt', 'Letter');
 $pdf->AddPage();
 $pdf->SetFont('Arial', '', 12);
 
+// Финансы
+$finance = 'Balance: '.$b.''.$finance->response->currency_code;
+
+// Маркетинг
+$clients = 'New clients (' . $day_min . '-' . $month_min . ') - (' . $day_max . '-' . $month_max . ') - ' . $i . '';
+
+// Статистика
 $value = 'Revenue: '.$data->response->revenue.'';
 $average = 'Middle Invoice: '.$data->response->middle_invoice.'';
 
 $pdf->SetX(70);
 $pdf->SetFont('Arial', 'I');
 
-$pdf->Cell(100, 15, $value, 0, 2);
-$pdf->Cell(100, 15, $average, 0, 2);
-$pdf->Cell(100, 15, $clients);
+$pdf->Cell(100, 15, 'Financial Balance', 0, 2); // Заголовок "Баланс"
+$pdf->Cell(100, 15, $b, 0, 2); // Баланс счетов
+
+$pdf->Cell(100, 15, 'Storage', 0, 2); // Заголовок "Склад"
+
+
+$pdf->Cell(100, 15, 'Marketing', 0, 2); // Заголовок "Макретинг"
+$pdf->Cell(100, 15, $clients); // Записываем количество клиентов
+
+
+
+$pdf->Cell(100, 15, 'Statistics', 0, 2); // Заголовок "Статистика"
+$pdf->Cell(100, 15, $value, 0, 2); // Выручка
+$pdf->Cell(100, 15, $average, 0, 2); // Средний чек
+$pdf->Cell(100, 15, 'Food Cost: ', 0, 2); // Food Cost
+$pdf->Cell(100, 15, 'Cash: ', 0, 2); // Наличные
+$pdf->Cell(100, 15, 'Cart: ', 0, 2); // Карта
+$pdf->Cell(100, 15, 'Bonus: ', 0, 2); // Бонусами
+
+
 
 $pdf->Ln(100);
 
-$pdf->Output('reciept.pdf', 'F');
+//$pdf->Output('reciept.pdf', 'F'); // Записываем в файл
 
 // Генерация PDF и сохранение в файл
 $doc = $pdf->Output('reciept.pdf', 'S');
