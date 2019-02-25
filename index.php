@@ -46,8 +46,8 @@ $finance = (object)\poster\src\PosterApi::finance()->getAccounts(); // Полу�
 $b = 0; // Начальный баланс счетов
 
 // Просчет суммы по всем счетам
-foreach ($finance->response as $balance) {
-    $b = $balance['balance'] + $b;
+foreach ($finance->response as $f) {
+    $b = $f->balance + $b;
 }
 
 $i = 0; // Начальный счетчик клиентов
